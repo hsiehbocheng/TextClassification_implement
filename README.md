@@ -1,4 +1,4 @@
-# TextClassification_implement
+# 文本分類實現 - Python (Gensim, Keras)
 
 ### 國立政治大學 111 學年度 人工智慧應用專題 『AI 主流應用及技巧』實作專案
 自然語言處理包含：語意分析(Semantic Analysis)、命名實體(NER)、文本分類(Text Categorization)、翻譯(Translaton) …… 等任務，
