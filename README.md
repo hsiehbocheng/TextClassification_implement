@@ -5,10 +5,11 @@
 這裡我基於 [【人工智慧應用專題】人工智慧主流技術 課程](https://www.youtube.com/watch?v=vchetga-8-M)，劉瓊如老師在第一次與第四次上課所介紹的語言模型(詞向量表示法)，利用 python 實作。
 另外，初學ML和NLP，主要根據老師上課、炎龍老師YT頻道還有網路上東看看西看看自學而來，如果有錯誤再請多多指教
 
-### Data
+- Data
 資料是 kaggle Dou ban Movie short comments 豆瓣電影評論
-- [資料連結 Kaggle](https://www.kaggle.com/datasets/liujt14/dou-ban-movie-short-comments-10377movies)
-- [資料連結 my google drive](https://drive.google.com/file/d/1K4GNFKhjJEsBOTJ0riZaSEAXPfkZy6Vp/view?usp=share_link)
+- [Kaggle 資料連結](https://www.kaggle.com/datasets/liujt14/dou-ban-movie-short-comments-10377movies)
+- [我的 google drive 資料連結](https://drive.google.com/file/d/1K4GNFKhjJEsBOTJ0riZaSEAXPfkZy6Vp/view?usp=share_link)
+- [我寫的 Medium]https://medium.com/@1905bruce/nlp-text-categorization-implement-with-python-71c6486d61e1)
 -----
 ## 資料預處理
 - 資料是 kaggle Dou ban Movie short comments 豆瓣電影評論，包含用戶資訊、電影、評論、星星數、Like 數，這邊我只留我想要的欄位，Comment(評論)、Star(星星數)，並且設定 Star > 3 是正面評論，否則為負面評論，也就是在做二元分類的任務，只預測該評論為正面or負面，另外，因為資料量有兩百多萬筆，所以我只抽取1/4，一部分的資料做實做。
