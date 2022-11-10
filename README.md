@@ -1,7 +1,9 @@
-# 文本分類實現 - Python (Gensim, Keras)
+# 文本分類實現 - 豆瓣電影評論情緒分析
 
-### 國立政治大學 111 學年度 人工智慧應用專題 『AI 主流應用及技巧』實作專案
-自然語言處理包含：語意分析(Semantic Analysis)、命名實體(NER)、文本分類(Text Categorization)、翻譯(Translaton) …… 等任務，
+tfidf, jieba, word2vec, dec2vec, lstm
+
+
+自然語言處理包含：語意分析(Semantic Analysis)、命名實體(NER)、文本分類(Text Categorization)、翻譯(Translaton) …… 等任務，
 這裡我基於 [【人工智慧應用專題】人工智慧主流技術 課程](https://www.youtube.com/watch?v=vchetga-8-M)，劉瓊如老師在第一次與第四次上課所介紹的語言模型(詞向量表示法)，利用 python 實作。
 另外，初學ML和NLP，主要根據老師上課、炎龍老師YT頻道還有網路上東看看西看看自學而來，如果有錯誤再請多多指教
 
