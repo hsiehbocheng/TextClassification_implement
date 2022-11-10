@@ -9,7 +9,7 @@
 資料是 kaggle Dou ban Movie short comments 豆瓣電影評論
 - [Kaggle 資料連結](https://www.kaggle.com/datasets/liujt14/dou-ban-movie-short-comments-10377movies)
 - [我的 google drive 資料連結](https://drive.google.com/file/d/1K4GNFKhjJEsBOTJ0riZaSEAXPfkZy6Vp/view?usp=share_link)
-- [我寫的 Medium]https://medium.com/@1905bruce/nlp-text-categorization-implement-with-python-71c6486d61e1)
+- [我寫的 Medium](https://medium.com/@1905bruce/nlp-text-categorization-implement-with-python-71c6486d61e1)
 -----
 ## 資料預處理
 - 資料是 kaggle Dou ban Movie short comments 豆瓣電影評論，包含用戶資訊、電影、評論、星星數、Like 數，這邊我只留我想要的欄位，Comment(評論)、Star(星星數)，並且設定 Star > 3 是正面評論，否則為負面評論，也就是在做二元分類的任務，只預測該評論為正面or負面，另外，因為資料量有兩百多萬筆，所以我只抽取1/4，一部分的資料做實做。
