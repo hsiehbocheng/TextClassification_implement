@@ -91,6 +91,44 @@ pdWordFreq.columns = ['全部評論關鍵字', 'Freq', '正面評論關鍵字', 
 
 del key_words_all, key_words_pos, key_words_neg, tokens_all, tokens_positive, tokens_negative
 ```
+```py
+display(pdWordFreq.head(3))
+```
+<table>
+  <tr>
+    <td>全部評論關鍵字</td>
+    <td>Freq</td>
+    <td>正面評論關鍵字</td>
+    <td>Freq</td>
+    <td>負面評論關鍵字</td>
+    <td>Freq</td>
+  </tr>
+  <tr>
+    <td>劇情</td>
+    <td>45507</td>
+    <td>劇情</td>
+    <td>24049</td>
+    <td>劇情</td>
+    <td>21458</td>
+  </tr>
+  <tr>
+    <td>真的</td>
+    <td>32710</td>
+    <td>好看</td>
+    <td>23740</td>
+    <td>故事</td>
+    <td>13138</td>
+  </tr>
+  <tr>
+    <td>好看</td>
+    <td>32407</td>
+    <td>喜歡</td>
+    <td>21778</td>
+    <td>真的</td>
+    <td>12675</td>
+  </tr>
+</table>
+
 ## 轉換詞向量
 - tfidf
 ```py
@@ -113,6 +151,21 @@ tfdif_score_neg = pd.DataFrame({'負面評論': tfidf.get_feature_names(),
                    'tfidf_score': features_train_tfdif.toarray()[y_train==0].mean(axis=0).tolist()}).sort_values(by='tfidf_score', ascending=False).reset_index(drop=True)
 pdWordTfidf = pd.concat([tfdif_score_all, tfdif_score_pos, tfdif_score_neg], axis=1)
 del tfdif_score_all, tfdif_score_pos, tfdif_score_neg
+```
+```py
+display(pdWordTfidf.head(10))
+
+  全部評論	tfidf_score	正面評論	tfidf_score	負面評論	tfidf_score
+0	電影	   0.033508	   電影	     0.034212	   電影	    0.032440
+1	好看	   0.023383	   好看	     0.028047	   劇情	    0.028424
+2	劇情	   0.022350	   喜歡	     0.022659	   特效	    0.019289
+3	喜歡	   0.018351	   不錯	     0.021157	   真的	    0.018317
+4	不錯	   0.017822	   劇情	     0.018346	   故事	    0.017385
+5	真的	   0.017750	   真的	     0.017375	   感覺	    0.017192
+6	故事	   0.015794	   一個	     0.015991	   好看	    0.016306
+7	一個	   0.015730	   故事	     0.014745	   一個	    0.015333
+8	感覺	   0.015217	   感覺	     0.013915	   不錯	    0.012761
+9	特效	   0.015190	   一部	    0.013729	   演技	    0.012560
 ```
 
 ### Word2Vec
@@ -142,9 +195,21 @@ for i in range(20):
 
 ```py
 # get vectors
-w2v.wv['好看
+w2v.wv['好看']
 # get similar words
 w2v.wv.most_similar('好看')
+[('沒一', 0.6349935531616211),
+ ('精彩', 0.6334841251373291),
+ ('超超超', 0.6275707483291626),
+ ('沒辣麼', 0.6225746273994446),
+ ('電影超', 0.62059485912323),
+ ('之後比', 0.6200451254844666),
+ ('好笑', 0.595417857170105),
+ ('隊差', 0.5940516591072083),
+ ('好好看', 0.5938977003097534),
+ ('中辣麼', 0.5913739800453186)]
+```
+```py
 def most_similar_w2v(words, topn=10):
   similar_df = pd.DataFrame()
   for word in words:
@@ -156,6 +221,7 @@ def most_similar_w2v(words, topn=10):
   return similar_df
  most_similar_w2v(words=['好看', 'marvel', '超英', '英雄', '感人', '動畫', 'XD'])
 ```
+
 - 將文章轉為詞向量 為之後套入 xgb 準備
 ```py
 # 先篩選掉模型沒看過的字
